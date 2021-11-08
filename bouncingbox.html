@@ -1,0 +1,57 @@
+<!doctypehtml>
+    <html>
+
+    <head>
+        <style>
+            div {
+                height: 50px;
+                width: 50px;
+                background: red;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box"></div>
+    </body>
+
+    </html>
+    <script>
+        var box = document.getElementById("box")
+document.getElementById("box").addEventListener("click",boxclick)
+
+
+        var x = 0
+        var y = 0
+        var speedx = 10
+        var speedy = 6
+        setInterval(update, 50)
+
+        function update() {
+            box.style.left = x + "px"
+            box.style.top = y + "px"
+            x = x + speedx
+            y = y + speedy
+             if(x >= 350) {
+                speedx = -speedx
+            }
+            if (x < 0){
+                speedx = speedx * -1
+            }
+            if(y >= 300) {
+                speedy = -speedy
+            }
+            if (y < 0){
+                speedy = speedy * -1
+            }
+                
+   
+
+        }
+function boxclick (){
+    speedx=speedx+5
+}
+
+
+    </script>
